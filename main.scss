@@ -1,0 +1,47 @@
+// _mixins.scss
+@mixin text-shadow($x, $y, $blur, $color) {
+    text-shadow: $x $y $blur $color;
+  }
+  
+  // _buttons.scss
+  .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: #ccc;
+    color: #fff;
+  }
+  
+  .btn-primary {
+    @extend .btn;
+    background-color: blue;
+  }
+  
+  // main.scss
+  @import 'mixins';
+  @import 'buttons';
+  
+  h1 {
+    @include text-shadow(1px, 1px, 3px, #ccc);
+  }
+  
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  
+    li {
+      display: inline-block;
+      margin-right: 10px;
+  
+      a {
+        color: blue;
+        text-decoration: none;
+  
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  
